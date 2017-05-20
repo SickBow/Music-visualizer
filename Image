@@ -1,7 +1,9 @@
 void circle(vec2 uv, vec2 center, float radius, vec3 color, inout vec3 pixel)
 {
     if(length(uv-center)< radius){
-    	pixel = color;   
+    	float c = smoothstep(radius, radius-0.01, length(uv-center));
+        color = vec3(c);
+        pixel = color;   
     }
 }
 
